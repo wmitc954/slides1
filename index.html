@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html >
+<head>
+<script>
+var picNum=1;
+function forward()
+{
+	var pic = document.getElementById("picture");
+	picNum = picNum +1;
+	if(picNum > 12 )
+		picNum=1;
+	pic.src=picNum.toString()+".jpg";
+	//alert(pic.src);	debugging 	
+}
+function back()
+{
+	var pic = document.getElementById("picture");
+	picNum = picNum -1;
+	if(picNum < 1 )
+		picNum=12;
+	pic.src=picNum.toString()+".jpg";
+	//alert(pic.src);	debugging 	
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#container{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#title, #controls{
+	text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+<div id="container">
+	<div id="title">
+		<h1>The Gifted</h1>
+	</div>
+	<div id="image">
+		<img src="1.jpg" alt="ufo pictures" id="picture" style="width:80%;height:750px">
+	</div>
+	<div id="controls">
+	<button onclick="back()"><h1>Back</h1></button><button onclick="forward()"><h1>Forward</h1></button>
+	
+	</div>	
+</div><!--end of container -->
+
+</body>
+
+</html>
